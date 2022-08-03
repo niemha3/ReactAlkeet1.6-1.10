@@ -55,12 +55,12 @@ const App = () => {
   const [allClicks, setAll] = useState([])
   
   const handleGoodClick = () => {
-    setAll(allClicks.concat('1'))
+    setAll(allClicks.concat(1))
     setGood(good + 1)
   }
 
   const handleNeutralClick = () => {
-    setAll(allClicks.concat('0'))
+    setAll(allClicks.concat(0))
     setNeutral(neutral + 1)
   }
 
@@ -75,14 +75,14 @@ const App = () => {
       sum += allClicks[index]/allClicks.length;
       
     }
-    return sum;
+    return sum.toFixed(2);
   }
 
   const positivePercentage = (good, neutral, bad) => {
     console.log(good,neutral,bad)
       
-      let positiveFeedbackPercentage = good / (good +neutral + bad);
-      return positiveFeedbackPercentage * 100;
+      let positiveFeedbackPercentage = good / (good +neutral + bad) * 100;
+      return positiveFeedbackPercentage.toFixed(0);
   }
   
 
